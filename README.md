@@ -14,7 +14,7 @@ The [infimum](https://en.wikipedia.org/wiki/Infimum_and_supremum) of the set sho
 For instance, on the set with keys `(K1, K2, ...Kn)`, where `K1 <= K2 <=...<=Kn`, and values `(V1, V2, ...Vn)`, a relation would
 be a mapping `R(k): k -> v`.
 
-The relation is encapuslated in `PartialInverval` through the `open_interval` and `label` values.
+The relation is encapuslated in `PartialInverval` through the `open_interval` and `label` values, where `open_interval` is the infimum of `(K1, K2, ...Kn)`.
 
 ## Package Management
 ### Poetry
