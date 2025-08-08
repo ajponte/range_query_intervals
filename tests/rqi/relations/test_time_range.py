@@ -1,7 +1,7 @@
 import datetime as dt
 
-from intervals import IntervalBoundary
-from intervals.time_range import TimeRangeInterval
+from rqi.intervals import IntervalBoundary
+from rqi.relations.time_range import TimeRangeInterval
 
 
 DEFAULT_INTERVAL_BOUNDARIES = [

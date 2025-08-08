@@ -7,7 +7,7 @@ from sqlalchemy import Column, VARCHAR, String
 from sqlalchemy.dialects.postgresql import TSRANGE
 from sqlalchemy.orm.session import Session
 
-from intervals.models import Base
+from rqi.models import Base
 
 
 class PartialInterval(Base):
