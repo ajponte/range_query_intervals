@@ -40,3 +40,6 @@ jobs:
     - name: Formatting checks
       run: |
         tox -e format
+    - name: Pytest
+      run: |
+        tox -e pytest
