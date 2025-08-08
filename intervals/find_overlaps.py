@@ -7,7 +7,7 @@ from sqlalchemy import select, func
 
 from sqlalchemy.orm import session
 
-from intervals.models.asset_hours import AssetHours
+from intervals.models.partial_interval import PartialInterval
 from intervals.time_range import TimeRangeInterval
 
 
@@ -16,10 +16,10 @@ def check_hours(asset: str, time_range: TimeRangeInterval):
     # todo
     db_session: session = session.Session
     try:
-        query = select(AssetHours).where(
+        query = select(PartialInterval).where(
             func.tsrange(time_range.start_dt, time_range.end_dt, time_range.bounds).op(
                 "@>"
-            )(AssetHours.open_interval)
+            )(PartialInterval.open_interval)
         )
         result = db_session.execute(query).scalars().all()
         print(f"Asset {asset} hours: {result}")

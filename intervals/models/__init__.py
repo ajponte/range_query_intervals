@@ -1,10 +1,13 @@
 """Shared DAO module."""
+import uuid
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.types import Enum
 
 Base = declarative_base()
 
+def generate_uuid_hex() -> str:
+    return uuid.uuid4().hex
 
 # pylint: disable=too-many-ancestors
 class CanonicalDay(Enum):
