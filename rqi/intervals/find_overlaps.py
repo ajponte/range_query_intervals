@@ -7,8 +7,8 @@ from sqlalchemy import select, func
 
 from sqlalchemy.orm import session
 
-from intervals.models.partial_interval import PartialInterval
-from intervals.time_range import TimeRangeInterval
+from rqi.models.partial_interval import PartialInterval
+from rqi.relations.time_range import TimeRangeInterval
 
 
 def check_hours(asset: str, time_range: TimeRangeInterval):

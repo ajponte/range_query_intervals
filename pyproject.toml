@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "intervals"
+name = "rqi"
 version = "0.1.0"
 description = "Tools and implementations of Range Queries"
 authors = ["Alan Ponte <alanjponte@gmail.com>"]

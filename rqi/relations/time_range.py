@@ -1,6 +1,9 @@
 """
-`TimeRangeInterval` class.
-Can be used with sqlalchemy's implementation of psql `tsrange`.
+TimeRange relation.
+
+Objects:
+    `TimeRangeInterval` class.
+    Can be used with sqlalchemy's implementation of psql `tsrange`.
 
 Example Usage:
 
@@ -15,7 +18,7 @@ Example Usage:
 
 from datetime import datetime, timezone
 
-from intervals import IntervalBoundary
+from rqi.intervals import IntervalBoundary
 
 
 class TimeRangeInterval:
