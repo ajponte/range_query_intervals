@@ -8,8 +8,8 @@ to find overlapping intervals, where each interval represent a start and end epo
 In Postgres, this can be implemented in a fairly straightforward way using [tsrange](https://www.postgresql.org/docs/current/rangetypes.html).
 
 ## Range Interface
-A range's interface can be thought of as a [relation](https://en.wikipedia.org/wiki/Relation_(mathematics) of a [partially ordered set](https://en.wikipedia.org/wiki/Partially_ordered_set).
-The (infimum)[https://en.wikipedia.org/wiki/Infimum_and_supremum] of the set should be a direct mapping to `models.partial_interval`.
+A range's interface can be thought of a [Relation](https://en.wikipedia.org/wiki/Relation_(mathematics)) of a [partially ordered set](https://en.wikipedia.org/wiki/Partially_ordered_set).
+The [infimum](https://en.wikipedia.org/wiki/Infimum_and_supremum) of the set should be a direct mapping to `models.partial_interval`.
 
 For instance, on the set with keys `(K1, K2, ...Kn)`, where `K1 <= K2 <=...<=Kn`, and values `(V1, V2, ...Vn)`, a relation would
 be a mapping `R(k): k -> v`.
