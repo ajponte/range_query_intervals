@@ -1,3 +1,5 @@
+[![tsrange-intervals](https://github.com/ajponte/tsrange_intervals/actions/workflows/python-app.yml/badge.svg)](https://github.com/ajponte/tsrange_intervals/actions/workflows/python-app.yml)
+
 # Range Query Intervals
 
 This project is an example of how to use a [Range Tree](https://en.wikipedia.org/wiki/Range_tree)
