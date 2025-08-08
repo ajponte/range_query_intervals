@@ -25,6 +25,17 @@ This project includes a `tox.ini` file to automate tasks such as
 A fresh `tox` build can be invoked via `tox -r`, which whill invoke each task.
 See https://github.com/tox-dev/tox for more info.
 
+### Distribution
+A local distribution of the package can be created either through
+```shell
+ poetry build
+```
+or
+```shell
+ tos -e dist
+```
+Since the build is dependent on `poetry`, the commands are equivalent.
+
 ## Unit Tests
 This project uses `pytest`. You can invoke tests in a poetry environment, via
 ```shell
