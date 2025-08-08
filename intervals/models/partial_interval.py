@@ -3,7 +3,7 @@
 Asset Hours DAO. An asset is any entity which has an interval.
 """
 
-from sqlalchemy import Column, Integer, VARCHAR, String
+from sqlalchemy import Column, VARCHAR, String
 from sqlalchemy.dialects.postgresql import TSRANGE
 from sqlalchemy.orm.session import Session
 
@@ -46,26 +46,28 @@ class PartialInterval(Base):
     #
     open_interval = Column(TSRANGE, nullable=False)
 
-
     @classmethod
-    def insert(cls, start: int, label: dict, session: Session) -> str:
+    def insert(cls, start: int, label: dict, session: Session) -> str | None:
         """
-        Insert a new partial interval
+        Insert a new partial interval record.
 
+        :param label:
+        :param start:
         :param session: SqlAlchemy Session object.
-        :return:
+        :return: The id of new record.
         """
+        new_record_id = None
         try:
             new_range = PartialInterval(open_interval=start, label=label)
             session.add(new_range)
             session.refresh(new_range)
-            new_range_id: str = new_range.id
-            if new_range.id is None:
-                raise ValueError(f'')
+            new_record_id: str = new_range.id
             session.commit()
-            return new_range_id
+            return new_record_id
         except Exception as e:
             session.rollback()
             print(f"rolled-back due to error: {e}")
         finally:
             session.close()
+
+        return new_record_id
