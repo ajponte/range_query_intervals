@@ -1,11 +1,17 @@
+# pylint: disable=too-few-public-methods
+"""
+Asset Hours DAO. An asset is any entity which has an interval.
+"""
+
 from sqlalchemy import Column, Integer, Enum
 from sqlalchemy.dialects.postgresql import TSRANGE
 
-from scheduler.models import CanonicalDay, Base
+from intervals.models import CanonicalDay, Base
 
 
 class AssetHours(Base):
-    __tablename__ = 'store_hours'
+    """AssetHours DAO."""
+    __tablename__ = 'asset_hours'
 
     id = Column(Integer, primary_key=True)
     day = Column(Enum(CanonicalDay, name="canonical_day"), nullable=False)

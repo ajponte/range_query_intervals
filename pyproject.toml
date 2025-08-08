@@ -1,17 +1,22 @@
 [tool.poetry]
-name = "tsrange-scheduler"
+name = "range-query-intervals"
 version = "0.1.0"
-description = "A scheduling system using PostgreSQL tsrange + GiST via SQLAlchemy"
-authors = ["Your Name <you@example.com>"]
+description = "Tools and implementations of Range Queries"
+authors = ["Alan Ponte <alanjponte@gmail.com>"]
 readme = "README.md"
 #packages = [{ include = "your_package_name" }]  # or remove if not using a package dir
 
 [tool.poetry.dependencies]
-python = "^3.10"  # or whatever version you're using
+python = "^3.13"
 SQLAlchemy = "^2.0"
 psycopg2-binary = "^2.9"
 alembic = "^1.12"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.group.test.dependencies]
+pytest="^8.4.1"
+SQLAlchemy = "^2.0"
+pylint = "3.3.7"
+
+#[build-system]
+#requires = ["poetry-core"]
+#build-backend = "poetry.core.masonry.api"
