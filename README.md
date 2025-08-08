@@ -45,3 +45,6 @@ With `tox`, you can also check formatting any time with
 ```
 Note that since tox is intended to be invoked as part of a CI
 pipeline, we will never rewrite files.
+
+## Type Checking
+This project (somewhat) enforces static typing through `mypy`.
