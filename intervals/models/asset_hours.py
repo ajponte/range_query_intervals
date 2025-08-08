@@ -11,7 +11,8 @@ from intervals.models import CanonicalDay, Base
 
 class AssetHours(Base):
     """AssetHours DAO."""
-    __tablename__ = 'asset_hours'
+
+    __tablename__ = "asset_hours"
 
     id = Column(Integer, primary_key=True)
     day = Column(Enum(CanonicalDay, name="canonical_day"), nullable=False)

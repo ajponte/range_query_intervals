@@ -17,17 +17,15 @@ def check_hours(asset: str, time_range: TimeRangeInterval):
     db_session: session = session.Session
     try:
         query = select(AssetHours).where(
-            func.tsrange(
-                time_range.start_dt,
-                time_range.end_dt,
-                time_range.bounds
-            ).op('@>')(AssetHours.open_interval)
+            func.tsrange(time_range.start_dt, time_range.end_dt, time_range.bounds).op(
+                "@>"
+            )(AssetHours.open_interval)
         )
         result = db_session.execute(query).scalars().all()
-        print(f'Asset {asset} hours: {result}')
+        print(f"Asset {asset} hours: {result}")
         if not result:
             raise ValueError("Event outside store open hours")
         return True
     except Exception as e:
-        print(f'Exception: {e}')
+        print(f"Exception: {e}")
         return False

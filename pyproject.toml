@@ -13,6 +13,7 @@ psycopg2-binary = "^2.9"
 alembic = "^1.12"
 
 [tool.poetry.group.test.dependencies]
+black = "25.1.0"
 pytest="^8.4.1"
 SQLAlchemy = "^2.0"
 pylint = "3.3.7"
