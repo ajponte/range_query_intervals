@@ -32,7 +32,7 @@ jobs:
         pip install tox
         pip install poetry 
         # Install poetry dependencies only.
-        poetry install --no-root
+        poetry install
         #### pip install tox tox-gh-actions
     - name: Pylint checks
       run: |
