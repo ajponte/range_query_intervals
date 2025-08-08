@@ -56,18 +56,15 @@ class PartialInterval(Base):
         :param session: SqlAlchemy Session object.
         :return: The id of new record.
         """
-        new_record_id = None
+        partial_interval = PartialInterval(open_interval=start, label=label)
         try:
-            new_range = PartialInterval(open_interval=start, label=label)
-            session.add(new_range)
-            session.refresh(new_range)
-            new_record_id: str = new_range.id
+            session.add(partial_interval)
+            session.refresh(partial_interval)
             session.commit()
-            return new_record_id
+            return partial_interval.id  # type: ignore
         except Exception as e:
             session.rollback()
             print(f"rolled-back due to error: {e}")
         finally:
             session.close()
-
-        return new_record_id
+        return None
