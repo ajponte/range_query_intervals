@@ -14,14 +14,14 @@ from intervals.time_range import TimeRangeInterval
 def check_hours(asset: str, time_range: TimeRangeInterval):
     """Return True only if the event is within the shop's hours."""
     # todo
-    db_session: session = session.Session
+    db_session: session = session.Session  # type: ignore
     try:
         query = select(PartialInterval).where(
             func.tsrange(time_range.start_dt, time_range.end_dt, time_range.bounds).op(
                 "@>"
             )(PartialInterval.open_interval)
         )
-        result = db_session.execute(query).scalars().all()
+        result = db_session.execute(query).scalars().all()  # type: ignore
         print(f"Asset {asset} hours: {result}")
         if not result:
             raise ValueError("Event outside store open hours")

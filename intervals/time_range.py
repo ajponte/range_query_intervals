@@ -56,7 +56,7 @@ class TimeRangeInterval:
 
         self.start_epoch = start_epoch
         self.end_epoch = end_epoch
-        self.bounds: list[IntervalBoundary] | None = bounds or [
+        self.bounds: list[IntervalBoundary] = bounds or [
             IntervalBoundary.CLOSED_LEFT,
             IntervalBoundary.CLOSED_RIGHT,
         ]
