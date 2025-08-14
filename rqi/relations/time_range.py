@@ -24,7 +24,7 @@ from rqi.intervals import IntervalBoundary
 class TimeRangeInterval:
     """Abstract representation of a time range {start_epoch...end_epoch}"""
 
-    def __init__(self, start_epoch: int, end_epoch: int, bounds: list | None):
+    def __init__(self, start_epoch: int, end_epoch: int, bounds: list | None = None):
         """
         :param start_epoch: start time as UTC epoch int.
         :param end_epoch: end time as UTC epoch int.
